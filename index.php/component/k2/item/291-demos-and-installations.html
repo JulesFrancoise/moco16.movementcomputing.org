@@ -172,7 +172,7 @@ $GK_URL = "../../../../index.html";
 
 	 </head>
 <body class="com_k2"  data-tablet-width="1040" data-mobile-width="640" data-zoom-size="150" data-smoothscroll="1">
-	
+
 	<div id="gkBg">
 	    <header id="gkHeader" class="menu-visible">
 			<div id="gkHeaderNav" class="static">
@@ -329,85 +329,7 @@ $GK_URL = "../../../../index.html";
 			</div>
 </footer>
 
-<div id="gkfb-root"></div>
-<script type="text/javascript">
 
-//<![CDATA[
-   	window.fbAsyncInit = function() {
-		FB.init({ appId: '',
-			status: true,
-			cookie: true,
-			xfbml: true,
-			oauth: true
-		});
-
-	  		  	function updateButton(response) {
-	    	var button = document.getElementById('fb-auth');
-
-			if(button) {
-			    if (response.authResponse) {
-			    // user is already logged in and connected
-			    button.onclick = function() {
-			        if(document.id('login-form')){
-			            document.id('modlgn-username').set('value','Facebook');
-			            document.id('modlgn-passwd').set('value','Facebook');
-			            document.id('login-form').submit();
-			        } else if(document.id('com-login-form')) {
-			           document.id('username').set('value','Facebook');
-			           document.id('password').set('value','Facebook');
-			           document.id('com-login-form').submit();
-			        }
-			    }
-			} else {
-			    //user is not connected to your app or logged out
-			    button.onclick = function() {
-			        FB.login(function(response) {
-			           if (response.authResponse) {
-			              if(document.id('login-form')){
-			                document.id('modlgn-username').set('value','Facebook');
-			                document.id('modlgn-passwd').set('value','Facebook');
-			                document.id('login-form').submit();
-			              } else if(document.id('com-login-form')) {
-			                 document.id('username').set('value','Facebook');
-			                 document.id('password').set('value','Facebook');
-			                 document.id('com-login-form').submit();
-			              }
-			          } else {
-			            //user cancelled login or did not grant authorization
-			          }
-			        }, {scope:'email'});
-			    }
-	    	}
-	    }
-	  }
-	  // run once with current status and whenever the status changes
-	  FB.getLoginStatus(updateButton);
-	  FB.Event.subscribe('auth.statusChange', updateButton);
-	  	};
-    //
-   window.addEvent('load', function(){
-        (function(){
-                if(!document.getElementById('fb-root')) {
-                     var root = document.createElement('div');
-                     root.id = 'fb-root';
-                     document.getElementById('gkfb-root').appendChild(root);
-                     var e = document.createElement('script');
-                 e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-                     e.async = true;
-                 document.getElementById('fb-root').appendChild(e);
-                }
-        })();
-    });
-    //]]>
-</script>
-
-
-<!-- +1 button -->
-
-<!-- twitter -->
-
-
-<!-- Pinterest script -->
 
 <div id="gkPopupLogin">
           <div class="gkPopupWrap">
